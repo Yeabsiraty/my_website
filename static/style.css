@@ -566,7 +566,7 @@ a{
         color: var(--text-color);
     }
     .contact_text{
-        padding-top: 6%;
+        display: none;
     }
     .form_label{
         font-size: 15px;
