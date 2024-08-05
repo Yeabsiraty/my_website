@@ -1,0 +1,78 @@
+
+{%with messages=get_flashed_messages(with_categories=True)%}
+        {%if messages%}
+            {%for category,message in messages%}
+                {%if category=="success"%}
+                    <span class="alert alert_ses" >{{message}}</span>
+                {%endif%}
+                {%if category=="error"%}
+                <br><br>
+                    <span class="alert alert_err">{{message}}</span>
+                {%endif%}
+
+            {%endfor%}
+        {%endif%}
+{%endwith%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<nav class="header">
+    <div class="logo"><a href="{{url_for('home')}}" ><span style="color: red;font-size: 35px;">Y</span>abu</a></div>
+    <div class="links">
+      <ul class="links">
+        <li ><a href="{{url_for('home')}}" style="color: red;">Home</a></li>
+        {%if show==True%}
+        <a href="#about_me"><li>About <span class="phone_me">me</span></li></a>
+        <a href="#project"><li>Projects</li></a>
+        {%endif%}
+        <li><a href="{{url_for('contact')}}">Contact <span class="phone_me">me</span></a></li>
+      </ul>
+    </div>
+    <div class="night" onclick=" toggleMode()">
+      <i class="fa-solid fa-circle-half-stroke"></i></div>
+    <div class="login" id="hire_me" ><span id="hire_me_text">Hire Me</span> </div>
+    <div class="hire_laugh" id="laugh" ><a href="{{url_for('contact')}}"><i class="fa-solid fa-face-laugh" style="color:  rgb(255, 174, 0);"></i></a></div>
+
+    <div class="open_bar" id="open_bar" onclick="phone_links()"><i class="fa-solid fa-bars"></i></div>
+    <div class="close_bar" id="close_bar"  onclick="phone_links()"><i class="fa-solid fa-x"></i></div>
+  </nav>
+  <div class="phone_links phone_link" id="phone_links">
+    <ul class="phone_links">
+      <li style="color: red;" ><a href="{{url_for('home')}}" id="hide_link">Home</a></li>
+      {%if show==True%}
+      <li id="hide_link"><a href="#about_me">About me</a></li>
+      <li id="hide_link"><a href="#project">Projects</a></li>
+      {%endif%}
+      <li id="hide_link"><a href="{{url_for('contact')}}">Contact me</a></li>
+    </ul>
+  </div>
+  {%block content%}
+  {%endblock%}
+
+  <footer>
+    <div class="all">
+      <div class="fotter_link" >
+            <li class="fot_home"><a href="{{url_for('home')}}">Home</a></li>
+            {%if show==True%}
+            <li id="hide_link"><a href="#about_me">About me</a></li>
+           <li id="hide_link"> <a href="#project">Projects</a></li>
+            {%endif%}
+        <li><a href="{{url_for('contact')}}">Contact <span class="phone_me">me</span></a></li>
+          </ul>
+      </div>
+      <div class="fotter_text" style="width: 40%; ">
+        <p>Hello my name is YEABSIRA TESFAYE am a professional programmer. I can develop both FRONT and BACKEND.</p>
+      </div>
+      <br>
+    </div><br><br>
+    <div class="copyright">
+      <hr class="c_hr">
+      <h4 class="all_right"><i class="fa-regular fa-copyright"></i> 2024 ||All Right Reserved</h4>
+    </div><br>
+  </footer>
+  <script src="../static/script.js"></script>

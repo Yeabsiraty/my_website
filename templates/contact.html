@@ -1,0 +1,39 @@
+{% extends 'forall.html' %}
+{%block content%}
+
+{%with messages=get_flashed_messages(with_categories=True)%}
+        {%if messages%}
+            {%for category,message in messages%}
+                {%if category=="success"%}
+                    <span class="alert alert_ses" >{{message}}</span>
+                {%endif%}
+                {%if category=="error"%}
+                <br><br>
+                    <span class="alert alert_err">{{message}}</span>
+                {%endif%}
+
+            {%endfor%}
+        {%endif%}
+{%endwith%}
+<body class="contact_pagess">
+   
+    <h1 class="contact_text">Contact</h1>
+    <div class="contact">
+        <div class="contact_image form_c">
+            <h1>Contact Me</h1>
+            <h2 class="contact_phone_number"><i class="fa-solid fa-phone"></i> +251941184305</h2>
+            <h3 class="contact_email">yeabsiratesfaye4118@gmail.com</h3>
+        </div>
+        <div class="contact_form form_c">
+            <form action="" method="post" novalidate>
+                {{form.csrf_token}}
+                {%import "macro.html" as mac%}
+                {{mac.render_field(form.name)}}
+                {{mac.render_field(form.email)}} {{mac.render_field(form.message)}}<br><br><br>
+                <input type="submit" value="submit" class="contact_btn">
+            </form>
+        </div>
+    </div>
+    
+</body><br><br><br><br><br>
+{%endblock%}

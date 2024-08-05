@@ -1,0 +1,125 @@
+{% extends 'forall.html' %}
+{%block content%}
+<body id="bodyy" class="bodyy">
+  <!-- header -->
+ 
+
+  
+
+  <!-- body-->
+  <div class="main_body">
+    <div class="top-texts">
+      {%with messages=get_flashed_messages(with_categories=True)%}
+      {%if messages%}
+          {%for category,message in messages%}
+              {%if category=="success"%}
+                  <span class="alert alert_ses" >{{message}}</span>
+              {%endif%}
+              {%if category=="error"%}
+              <br><br>
+                  <span class="alert alert_err">{{message}}</span>
+              {%endif%}
+    
+          {%endfor%}
+      {%endif%}
+    {%endwith%}
+      <h6>WELCOME TO MY WORLD</h6>
+      <h1>Hi, I'm <span style="color: rgb(220, 20, 60)">YEABSIRA TESFAYE</span> </h1>
+      <h2>a Professional Programmer .</h2>
+      <h6>I have been working since 2019. <br><br>I have knowledge on Html, css, Mysql, javaScript, java, Python, Flask </h6>
+      <div class="fk">
+        <h6 style="width: 62%;">FIND ME</h6>
+        <h6>Knowledges</h6>
+      </div>
+
+      <div class="fonts">
+      <ul class="find_font" style="list-style: none; gap: 10%;width: 54%;margin: -10px 0 0 -7%;">
+        <li><i class="fa-brands fa-facebook" style="color: #070fe9;"></i></li>
+        <li><i class="fa-brands fa-telegram" style="color: #63E6BE;"></i></li>
+        <li><i class="fa-brands fa-github" style="color: #005eff;"></i></li>
+      </ul>
+      <ul class="k_font" style="list-style: none;  gap:30%;margin-top: -10px;">
+        <li><i class="fa-brands fa-js" style="color: #FFD43B;"></i></li>
+        <li><i class="fa-solid fa-database" style="color: #63E6BE;"></i></li>
+        <li><i class="fa-brands fa-html5" style="color: #FFD43B;"></i></li>
+        <li><i class="fa-brands fa-css3-alt" style="color: #63E6BE;"></i></li>
+        <li><i class="fa-brands fa-java" style="color: #ff0000;"></i></li>
+        <li><i class="fa-brands fa-python" style="color: #FFD43B;"></i></li>
+      </ul>
+    </div>
+      
+      
+    </div>
+    <div class="image">
+    </div>
+  </div>
+
+  
+</body>
+<br><br><br><br><br>
+<br><br id="about_me"><br><br ><br>
+<div class="aboutme_text reveal">
+  <div class="body_image  ">
+  </div>
+  <div class="my_text " >
+    <h1>About me?</h1><br>
+    <p>I am a website designer. with a strong focus on BackEnd. <span class="no_phone">I love to get new experience and always learn from my surrounding.</span></p>
+    <br><br>
+    <button class="d_btn reveal">Download PDF</button>
+    <p></p>
+  </div>
+
+</div><br><br><br>
+<h1 class="experience_txt reveal">Experiences</h1>
+<div class="experience reveal">
+  <div class="frontend">
+    <h2 class="exp_text">Frontend</h2>
+    <ul>
+      <li><i class="fa-solid fa-circle-check"></i> HTML</li>
+      <li><i class="fa-solid fa-circle-check"></i> CSS</li>
+      <li><i class="fa-solid fa-circle-check"></i> JAVASCRIPT</li>
+    </ul>
+  </div>
+  <div class="backend">
+    <h2 class="exp_text">BackEnd</h2>
+    <ul>
+      <li><i class="fa-solid fa-circle-check"></i> MYSQL</li>
+      <li><i class="fa-solid fa-circle-check"></i> PHP</li>
+      <li><i class="fa-solid fa-circle-check"></i> PYTHON</li>
+      <li><i class="fa-solid fa-circle-check"></i> JAVA</li>
+    </ul>
+  </div>
+</div><br><br><br><br id="project"><br ><br >
+<h2 class="projects_text reveal" >Projects</h2>
+<div class="projects reveal">
+  <div class="p1">
+    <div class="project_content">
+      <h3>Blue Moon Hotel</h3>
+      <div class="pro_image1 pim">
+      </div>
+      <p class="pro_ptext">This Hotel website is made using php and enable user to book using their device.</p>
+   <br><a href="{{('git_hotel')}}" target="_blank"><button class="git_btn"><i class="fa-brands fa-github"></i></button></a>
+    </div>
+  </div>
+  <div class="p1">
+    <div class="project_content">
+      <h3>Hospital Appointment</h3>
+      <div class="p pro_image2 pim">
+      </div>
+      <p class="pro_ptext">This GUI is made using java and it enable user to schedule appointment for hospital online.</p>
+      <br><a href="{{('git_java')}}" target="_blank"><button class="git_btn"><i class="fa-brands fa-github"></i></button></a>
+    </div>
+  </div>
+  <div class="p1">
+    <div class="project_content">
+      <h3>Python projects</h3>
+      <div class="pro_image3 pim">
+      </div>
+      <p class="pro_ptext">Also i work many python projects check it on my github account.</p>
+      <br><a href="{{('git_python')}}" target="_blank"><button class="git_btn"><i class="fa-brands fa-github"></i></button></a>
+    </div>
+  </div>
+</div><br><br><br><br><br><br>
+
+<script src="../static/script.js"></script>
+{%endblock%}
