@@ -17,7 +17,7 @@ csrf = CSRFProtect(app)
 class Contact(FlaskForm):
     name = StringField("Full Name",validators=[DataRequired("Name is Required"),Length(min=5,max=50,message="Name must be between 5 - 10")])
     email = EmailField("Email",validators=[DataRequired("Email is required"),Length(min=10,max=50,message='Email must be between 10 -50')])
-    message = TextAreaField("Message", validators=[DataRequired("Message is require"),Length(min=50,max=500,message="Message must be between 5 - 500")])
+    message = TextAreaField("Message", validators=[DataRequired("Message is require"),Length(min=10,max=500,message="Message must be between 5 - 500")])
 
     
 @app.route("/")
