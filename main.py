@@ -31,9 +31,9 @@ def contact():
         name = clean(escape(form.name.data))
         email = clean(escape(form.email.data))
         messages = clean(escape(form.message.data))
-        passw = "jvqo ohff thol ovay"
-        from_user = "yeabsiratesfaye4118@gmail.com"
-        to_user = "yeabsiratesfaye4118@gmail.com"
+        passw = ""
+        from_user = ""
+        to_user = ""
         subject = "Your Portfolio Contact "
         message = MIMEMultipart()
         message["From"] = from_user
