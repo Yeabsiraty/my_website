@@ -79,7 +79,7 @@ body.dark-mode{
 .main_body{
     display: flex;
     width: 100%;
-    padding-top: 5%;
+    padding-top: 25%;
 }
 .top-texts{
     width: 40%;
